@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- daisy ui -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.10/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- font awsome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+      integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="container mx-auto">
+      <nav class="mt-6">
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-4xl font-bold">ReTro</a>
+          </div>
+          <div class="flex-none">
+            <ul class="menu menu-horizontal px-1">
+              <li class="px-1 tooltip" data-tip="Home">
+                <a class="border border-solid bg-gray-100 rounded-full p-4"
+                  ><i class="fa-solid fa-house"></i
+                ></a>
+              </li>
+              <li class="px-1 tooltip" data-tip="Write">
+                <a class="border border-solid rounded-full p-4 bg-gray-100"
+                  ><i class="fa-solid fa-pencil"></i
+                ></a>
+              </li>
+              <li class="px-1 tooltip" data-tip="Find people">
+                <a class="border border-solid rounded-full p-4 bg-gray-100"
+                  ><i class="fa-solid fa-user"></i
+                ></a>
+              </li>
+              <li class="px-1 tooltip" data-tip="Bookmark">
+                <a class="border border-solid rounded-full p-4 bg-gray-100"
+                  ><i class="fa-solid fa-flag"></i
+                ></a>
+              </li>
+
+              <button
+                class="bg-blue-500 w-36 ms-1 text-white font-bold rounded-full"
+              >
+                Sign In
+              </button>
+            </ul>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <main class="container mx-auto">
+      <!-- banner section -->
+      <section class="mx-3 mt-28">
+        <div
+          class="grid grid-cols-2 bg-[#12132D] bg-local bg-no-repeat bg-cover rounded-2xl"
+          style="background-image: url(images/bgbanner.png)"
+        >
+          <div class="my-24 ms-24">
+            <div class="text-center mb-5">
+              <h1 class="text-white text-6xl font-bold text-left">
+                Welcome to the <br />
+                <span
+                  class="text-transparent bg-clip-text bg-gradient-to-r from-blue-800 to-cyan-600"
+                  >ReTro</span
+                >
+                Forum
+              </h1>
+            </div>
+            <div class="mb-5">
+              <p class="text-xl text-white">
+                Share your favorite opinion and win and wp <br />
+                forum coffee mug!
+              </p>
+            </div>
+            <div class="lg:w-2/3">
+              <label
+                class="input input-bordered flex items-center rounded-full pe-1"
+              >
+                <input
+                  type="text"
+                  class="grow h-14"
+                  placeholder="Search hare anything"
+                />
+                <button
+                  class="bg-[#797DFC] font-medium text-white lg:h-10 md:h-10 lg:w-36 md:w-36 rounded-full"
+                >
+                  Search
+                </button>
+              </label>
+            </div>
+          </div>
+
+          <div class="">
+            <div
+              class="bg-white w-3/4 mt-32 py-6 font-medium rounded-2xl lg:ms-24 md:ms-12"
+            >
+              <div class="flex justify-between px-9 py-1">
+                <p>Resigtered Users</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between px-9 py-1">
+                <p>Forum</p>
+                <p>05</p>
+              </div>
+              <div class="flex justify-between px-9 py-1">
+                <p>Topics</p>
+                <p>01</p>
+              </div>
+              <div class="flex justify-between px-9 py-1">
+                <p>Replies</p>
+                <p>01</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section class="container mt-6">
+        <div class="text-center mb-14">
+          <h1 class="font-black text-5xl text-[#12132D] mb-6">Let's Discuss</h1>
+          <p class="text-xl text-[#12132d96]">
+            Yes, you can run unit tests and view the results directly within the
+            app. The <br />
+            integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <div class="grid grid-cols-3 gap-4 mx-3">
+          <div class="col-span-2">
+            <div class="card flex flex-row">
+              <div>
+                <img src="images/logo.png" alt="" />
+              </div>
+              <div>
+                <div>
+                  <p># Music</p>
+                  <p>Author: <span>Awlad Hossain</span></p>
+                </div>
+                <div>
+                  <h4>10 Kids Unaware of Their Halloween Costume</h4>
+                  <p>
+                    It's one thing to subject yourself to ha Halloween costume
+                    mishap because, hey that's your prerogative
+                  </p>
+                  <hr />
+                  <div class="flex justify-between">
+                    <div class="flex">
+                      <p>12</p>
+                      <p>14</p>
+                      <p>18</p>
+                    </div>
+                    <div><p>112</p></div>
+                  </div>
+                </div>
+
+                <div></div>
+              </div>
+            </div>
+          </div>
+          <div class="col-span-1"></div>
+        </div>
+      </section>
+    </main>
+    <footer></footer>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>

@@ -130,6 +130,8 @@
           </div>
         </div>
       </section>
+
+      <!-- lets discuss section -->
       <section class="container mt-6">
         <div class="text-center mb-14">
           <h1 class="font-black text-5xl text-[#12132D] mb-6">Let's Discuss</h1>
@@ -140,10 +142,21 @@
           </p>
         </div>
         <div class="grid grid-cols-3 gap-4 mx-3">
-          <div class="col-span-2 bg-[#797dfc2f] rounded-3xl">
-            <div class="card flex justify-around flex-row p-10">
-              <div class="">
-                <img src="images/logo.png" alt="" />
+          <div id="post-container" class="col-span-2 rounded-3xl mb-5">
+            <!-- card -->
+            <!-- <div id="card" class="card flex justify-around flex-row p-10">
+              <div class="w-20">
+                <img src="images/pro.png" alt="" />
+                <img
+                  class="relative bottom-14 left-8 lg:bottom-20 lg:left-14 hidden"
+                  src="images/online.png"
+                  alt=""
+                />
+                <img
+                  class="relative bottom-14 left-8 lg:bottom-20 lg:left-14"
+                  src="images/offline.png"
+                  alt=""
+                />
               </div>
               <div>
                 <div class="flex justify-start font-bold text-sm mb-3">
@@ -162,29 +175,57 @@
                   <hr />
 
                   <div class="flex justify-between mt-6">
-                    <div class="flex">
+                    <div class="flex text-[#12132d79]">
                       <p>
-                        <i class="fa-regular fa-message"></i> <span>560</span>
+                        <i class="fa-regular fa-message"></i>
+                        <span class="ps-3 pe-6">560</span>
                       </p>
-                      <p><i class="fa-light fa-eye"></i><span>1,568</span></p>
                       <p>
-                        <i class="fa-regular fa-clock"></i><span> 5 min</span>
+                        <i class="fa-regular fa-eye"></i
+                        ><span class="ps-3 pe-6">1,568</span>
+                      </p>
+                      <p>
+                        <i class="fa-regular fa-clock"></i
+                        ><span class="ps-3 pe-6"> 5 min</span>
                       </p>
                     </div>
-                    <div>
+
+                    <button>
                       <i
                         class="fa-solid fa-envelope-open"
                         style="color: #272af5"
                       ></i>
-                    </div>
+                    </button>
                   </div>
                 </div>
 
                 <div></div>
               </div>
+            </div> -->
+          </div>
+          <div class="col-span-1 bg-[#12132d15] rounded-3xl">
+            <div class="container flex items-center justify-center mt-4">
+              <h1 class="lg:me-36 md:me-6 font-bold">Title</h1>
+
+              <i class="fa-solid text-green-700 fa-check-double me-2"></i>
+              <p>Mark as read <span>(4)</span></p>
+            </div>
+            <div>
+              <div
+                class="flex justify-around bg-white mx-11 my-4 p-3 rounded-2xl"
+              >
+                <div>
+                  <p class="text-base font-semibold">
+                    10 Kids Unaware of Their Halloween Costume
+                  </p>
+                </div>
+                <div class="flex items-center text-[#12132d94]">
+                  <i class="fa-regular fa-eye me-1"></i>
+                  <p>1568</p>
+                </div>
+              </div>
             </div>
           </div>
-          <div class="col-span-1"></div>
         </div>
       </section>
     </main>

@@ -5,14 +5,13 @@ const loadData = async () => {
   const data = await res.json();
   const allpost = data.posts;
   displayAllpost(allpost);
-  //   console.log(allpost);
 };
 
 const displayAllpost = (posts) => {
   //   console.log(allpost);
   const postContainer = document.getElementById("post-container");
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const card = document.createElement("div");
     card.classList = `card flex  flex-row  p-10 mb-5 bg-[#797dfc2f]
     `;
@@ -60,7 +59,7 @@ const displayAllpost = (posts) => {
                       </p>
                     </div>
 
-                    <button class=" w-8 h-8 ">
+                    <button onclick="readHandler('${post.title}', '${post.view_count}')" class=" w-8 h-8 ">
                       <i
                      
                         class="fa-solid 
@@ -75,6 +74,29 @@ const displayAllpost = (posts) => {
     `;
     postContainer.appendChild(card);
   });
+};
+
+// read article hndler
+const readHandler = (title, view_count) => {
+  const markRead = document.getElementById("mark-number");
+  const markReadValue = parseFloat(markRead.innerText);
+
+  markRead.innerText = markReadValue + 1;
+  const postContainer = document.getElementById("read-container");
+  const div = document.createElement("div");
+  div.classList = `flex justify-around bg-white mx-11 my-4 p-3 rounded-2xl`;
+  div.innerHTML = `
+    <div>
+          <p class="text-base font-semibold me-4">
+                    ${title}
+                  </p>
+      </div>
+      <div class="flex items-center text-[#12132d94]">
+                  <i class="fa-regular fa-eye me-1"></i>
+                  <p>${view_count}</p>
+       </div>
+  `;
+  postContainer.appendChild(div);
 };
 
 loadData();

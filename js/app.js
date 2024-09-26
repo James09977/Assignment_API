@@ -102,6 +102,7 @@ const readHandler = (title, view_count) => {
 //handel search
 
 const handleSearch = () => {
+  toggleSpinner(true);
   const searchInput = document.getElementById("search-input");
   const inputText = searchInput.value;
   searchInput.value = "";
@@ -122,7 +123,7 @@ const displaySreachResult = (searchItems) => {
   const postContainer = document.getElementById("post-container");
   postContainer.innerText = "";
   searchItems.forEach((item) => {
-    console.log(item);
+    // console.log(item);
     const card = document.createElement("div");
     card.classList = `card flex  flex-row  p-10 mb-5 bg-[#797dfc2f]
     `;
@@ -185,6 +186,17 @@ const displaySreachResult = (searchItems) => {
    `;
     postContainer.appendChild(card);
   });
+  toggleSpinner(false);
+};
+
+// spinner
+const toggleSpinner = (isLoading) => {
+  const spinnerContainer = document.getElementById("spinner");
+  if (isLoading) {
+    spinnerContainer.classList.remove("hidden");
+  } else {
+    spinnerContainer.classList.add("hidden");
+  }
 };
 
 loadData();

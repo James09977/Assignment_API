@@ -93,11 +93,13 @@
                 class="input input-bordered flex items-center rounded-full pe-1"
               >
                 <input
+                  id="search-input"
                   type="text"
                   class="grow h-14"
                   placeholder="Search hare anything"
                 />
                 <button
+                  onclick=" handleSearch()"
                   class="bg-[#797DFC] font-medium text-white lg:h-10 md:h-10 lg:w-36 md:w-36 rounded-full"
                 >
                   Search
@@ -203,7 +205,7 @@
               </div>
             </div> -->
           </div>
-          <div class="col-span-1 bg-[#12132d15] rounded-3xl">
+          <div class="col-span-1 rounded-3xl">
             <div class="container flex items-center justify-center mt-4">
               <h1 class="lg:me-36 md:me-6 font-bold">Title</h1>
 
@@ -212,7 +214,7 @@
             </div>
             <div id="read-container">
               <div
-                class="flex justify-around bg-white mx-11 my-4 p-3 rounded-2xl"
+                class="flex justify-around bg-[#12132d15] mx-11 my-4 p-3 rounded-2xl"
               >
                 <div>
                   <p class="text-base font-semibold">

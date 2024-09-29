@@ -199,4 +199,52 @@ const toggleSpinner = (isLoading) => {
   }
 };
 
+//letest post
+const loadLetestPosts = async () => {
+  const res = await fetch(
+    "https://openapi.programming-hero.com/api/retro-forum/latest-posts"
+  );
+  const data = await res.json();
+  displayLetestPosts(data);
+};
+
+const displayLetestPosts = (posts) => {
+  const postContainer = document.getElementById("letest-posts");
+  posts.forEach((post) => {
+    console.log(post);
+    const div = document.createElement("div");
+    div.classList = `card bg-base-100 w-96 shadow-xl`;
+    div.innerHTML = `
+    <figure>
+              <img
+                src="${post.cover_image}"
+              />
+            </figure>
+            <div class="card-body">
+              <p>
+                <i class="fa-regular fa-calendar"></i>
+                <span>${post.author?.posted_date || "No publish date"}</span>
+              </p>
+              <h2 class="card-title">${post.title}</h2>
+              <p>${post.description}</p>
+              <div class="flex">
+                <div class="me-3">
+                  <img class="max-w-11 rounded-full" src="${
+                    post.profile_image
+                  }" alt="" />
+                </div>
+                <div>
+                  <h1 class="font-bold">${post.author.name}</h1>
+                  <p class="text-sm">${
+                    post?.author?.designation || "Unknown"
+                  }</p>
+                </div>
+              </div>
+            </div>
+    `;
+    postContainer.appendChild(div);
+  });
+};
+
 loadData();
+loadLetestPosts();

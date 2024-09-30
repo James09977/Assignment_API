@@ -41,7 +41,7 @@ const displayAllpost = (posts) => {
                   <p class="text-base text-[#12132d8a] mb-5">
                      ${post.description} is simply dummy text of the printing and typesetting industry. Lorem 
                   </p>
-                  <hr />
+                  <hr class="border border-dashed"	 />
 
                   <div class="flex justify-between mt-6">
                     <div class="flex text-[#12132d79]">
@@ -153,7 +153,7 @@ const displaySreachResult = (searchItems) => {
                  <p class="text-base text-[#12132d8a] mb-5">
                     ${item.description} is simply dummy text of the printing and typesetting industry. Lorem 
                  </p>
-                 <hr />
+                 <hr" />
 
                  <div class="flex justify-between mt-6">
                    <div class="flex text-[#12132d79]">

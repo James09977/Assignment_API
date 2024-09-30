@@ -5,26 +5,31 @@ const loadData = async () => {
   const data = await res.json();
   const allpost = data.posts;
   displayAllpost(allpost);
+  // showingActiveStatus(allpost);
 };
 
 const displayAllpost = (posts) => {
   //   console.log(allpost);
   const postContainer = document.getElementById("post-container");
+
+  // showingActiveStatus(post.isActive);
   posts.forEach((post) => {
-    // console.log(post);
+    // console.log(post.isActive);
+
     const card = document.createElement("div");
     card.classList = `card flex  flex-row  p-10 mb-5 bg-[#797dfc2f]
     `;
     card.innerHTML = `
      <div class="w-20 me-14">
                 <img class="rounded w-16" src="${post.image}" alt="" />
-                <img
+                
+                <img id ="online"
                   class="relative bottom-14 left-8 lg:bottom-20 lg:left-14 hidden"
                   src="images/online.png"
                   alt=""
                 />
-                <img
-                  class="relative bottom-14 left-8 lg:bottom-20 lg:left-16"
+                <img id = "offline"
+                  class="relative bottom-14 left-8 lg:bottom-20 lg:left-16 hidden"
                   src="images/offline.png"
                   alt=""
                 />
@@ -72,6 +77,7 @@ const displayAllpost = (posts) => {
                 </div>
               </div>
     `;
+
     postContainer.appendChild(card);
   });
 };
@@ -122,70 +128,74 @@ const loadSearchData = async (category) => {
 const displaySreachResult = (searchItems) => {
   const postContainer = document.getElementById("post-container");
   postContainer.innerText = "";
-  searchItems.forEach((item) => {
-    // console.log(item);
-    const card = document.createElement("div");
-    card.classList = `card flex  flex-row  p-10 mb-5 bg-[#797dfc2f]
-    `;
-    card.innerHTML = `
-    <div class="w-20 me-14">
-               <img class="rounded w-16" src="${item.image}" alt="" />
-               <img
-                 class="relative bottom-14 left-8 lg:bottom-20 lg:left-14 hidden"
-                 src="images/online.png"
-                 alt=""
-               />
-               <img
-                 class="relative bottom-14 left-8 lg:bottom-20 lg:left-16"
-                 src="images/offline.png"
-                 alt=""
-               />
-        </div>
-             <div>
-               <div class="flex justify-start font-bold text-sm mb-3">
-                 <p class="me-7"># ${item.category}</p>
-                 <p>Author: <span>${item.author.name}</span></p>
-               </div>
+
+  setTimeout(() => {
+    searchItems.forEach((item) => {
+      // console.log(item);
+      const card = document.createElement("div");
+      card.classList = `card flex  flex-row  p-10 mb-5 bg-[#797dfc2f]
+      `;
+      card.innerHTML = `
+      <div class="w-20 me-14">
+                 <img class="rounded w-16" src="${item.image}" alt="" />
+                 <img
+                   class="relative bottom-14 left-8 lg:bottom-20 lg:left-14 hidden"
+                   src="images/online.png"
+                   alt=""
+                 />
+                 <img
+                   class="relative bottom-14 left-8 lg:bottom-20 lg:left-16"
+                   src="images/offline.png"
+                   alt=""
+                 />
+          </div>
                <div>
-                 <h4 class="font-bold text- mb-4">
-                   ${item.title}
-                 </h4>
-                 <p class="text-base text-[#12132d8a] mb-5">
-                    ${item.description} is simply dummy text of the printing and typesetting industry. Lorem 
-                 </p>
-                 <hr" />
-
-                 <div class="flex justify-between mt-6">
-                   <div class="flex text-[#12132d79]">
-                     <p>
-                       <i class="fa-regular fa-message"></i>
-                       <span class="ps-3 pe-6">${item.comment_count} </span>
-                     </p>
-                     <p>
-                       <i class="fa-regular fa-eye"></i
-                       ><span class="ps-3 pe-6">${item.view_count}</span>
-                     </p>
-                     <p>
-                       <i class="fa-regular fa-clock"></i
-                       ><span class="ps-3 pe-6">${item.posted_time}  min</span>
-                     </p>
-                   </div>
-
-                   <button onclick="readHandler('${item.title}', '${item.view_count}')" class=" w-8 h-8 ">
-                     <i
-                    
-                       class="fa-solid 
+                 <div class="flex justify-start font-bold text-sm mb-3">
+                   <p class="me-7"># ${item.category}</p>
+                   <p>Author: <span>${item.author.name}</span></p>
+                 </div>
+                 <div>
+                   <h4 class="font-bold text- mb-4">
+                     ${item.title}
+                   </h4>
+                   <p class="text-base text-[#12132d8a] mb-5">
+                      ${item.description} is simply dummy text of the printing and typesetting industry. Lorem 
+                   </p>
+                   <hr" />
+  
+                   <div class="flex justify-between mt-6">
+                     <div class="flex text-[#12132d79]">
+                       <p>
+                         <i class="fa-regular fa-message"></i>
+                         <span class="ps-3 pe-6">${item.comment_count} </span>
+                       </p>
+                       <p>
+                         <i class="fa-regular fa-eye"></i
+                         ><span class="ps-3 pe-6">${item.view_count}</span>
+                       </p>
+                       <p>
+                         <i class="fa-regular fa-clock"></i
+                         ><span class="ps-3 pe-6">${item.posted_time}  min</span>
+                       </p>
+                     </div>
+  
+                     <button onclick="readHandler('${item.title}', '${item?.view_count}')" class=" w-8 h-8 ">
+                       <i
                       
-                       fa-envelope-open"
-                       style="color: #272af5"
-                     ></i>
-                   </button>
+                         class="fa-solid 
+                        
+                         fa-envelope-open"
+                         style="color: #272af5"
+                       ></i>
+                     </button>
+                   </div>
                  </div>
                </div>
-             </div>
-   `;
-    postContainer.appendChild(card);
-  });
+     `;
+      postContainer.appendChild(card);
+    });
+  }, 2000);
+
   toggleSpinner(false);
 };
 
@@ -195,7 +205,11 @@ const toggleSpinner = (isLoading) => {
   if (isLoading) {
     spinnerContainer.classList.remove("hidden");
   } else {
-    spinnerContainer.classList.add("hidden");
+    setTimeout(() => {
+      {
+        spinnerContainer.classList.add("hidden");
+      }
+    }, 2000);
   }
 };
 
@@ -211,7 +225,7 @@ const loadLetestPosts = async () => {
 const displayLetestPosts = (posts) => {
   const postContainer = document.getElementById("letest-posts");
   posts.forEach((post) => {
-    console.log(post);
+    // console.log(post);
     const div = document.createElement("div");
     div.classList = `card bg-base-100 w-96 shadow-xl`;
     div.innerHTML = `
@@ -246,5 +260,44 @@ const displayLetestPosts = (posts) => {
   });
 };
 
+// const showingActiveStatus = (posts) => {
+//   console.log(posts);
+//   const online = document.getElementById("online");
+//   const offline = document.getElementById("offline");
+//   posts.forEach((post) => {
+//     const isActive = post.isActive;
+//     // console.log(post);
+//     if (isActive) {
+//       online.classList.remove("hidden");
+//     } else {
+//       offline.classList.remove("hidden");
+//     }
+//   });
+// };
+
+// const showingActiveStatus = (posts) => {
+//   // Select elements once
+//   const online = document.getElementById("online");
+//   const offline = document.getElementById("offline");
+
+//   // Reset visibility for both
+//   online.classList.add("hidden");
+//   offline.classList.add("hidden");
+
+//   posts.forEach((post) => {
+//     const isActive = post.isActive;
+
+//     // Show the corresponding status
+//     if (isActive) {
+//       online.classList.remove("hidden");
+//       offline.classList.add("hidden");
+//     } else {
+//       offline.classList.remove("hidden");
+//       online.classList.add("hidden");
+//     }
+//   });
+// };
+
 loadData();
 loadLetestPosts();
+// showingActiveStatus();
